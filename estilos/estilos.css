@@ -19,6 +19,19 @@ body {
   padding: 20px
 }
 
-.menu-lateral {
+.menu-lateral li {
   flex: 200px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.boton {
+  background-color: aqua;
+  padding: 10px;
+  transition: 3.5s;
+  align-items: center;
+}
+
+.boton :hover{
+  background-color: chartreuse;
 }
