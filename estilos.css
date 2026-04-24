@@ -1,7 +1,24 @@
 h1 {
-  color: black;
+  color: blue;
+  text-align: center;
+}
+
+h2 {
+  color: blue;
+  text-align: center;
 }
 
 body {
-  background-image: url('https: //images-ext-1.discordapp.net/external/3Y9wD3BbpFqZueoZc5wQoN0mMQX5_EMExURWbXwQSvs/https/dormircomerviajar.com/wp-content/uploads/2022/09/Tubo-aquarium-scaled.jpg.webp?format=webp&width=2019&height=1134');
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.contenedor-principal {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px
+}
+
+.menu-lateral {
+  flex: 200px;
 }
