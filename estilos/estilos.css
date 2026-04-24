@@ -29,7 +29,7 @@ body {
   background-color: aqua;
   padding: 10px;
   transition: 3.5s;
-  align-items: center;
+  text-align: center;
 }
 
 .boton :hover{
