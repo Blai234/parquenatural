@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>L'Aquàrium de Barcelona</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ocean-deep: #01243a;
+        --ocean-mid: #023e5c;
+        --ocean-light: #0a7394;
+        --aqua: #00c9d4;
+        --aqua-glow: rgba(0, 201, 212, 0.3);
+        --white: #ffffff;
+        --white-dim: rgba(255, 255, 255, 0.85);
+        --white-muted: rgba(255, 255, 255, 0.6);
+        --card-bg: rgba(1, 36, 58, 0.55);
+        --card-border: rgba(0, 201, 212, 0.25);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Lato", sans-serif;
+        color: var(--white);
+        min-height: 100vh;
+        background-color: var(--ocean-deep);
+        overflow-x: hidden;
+      }
+
+      /* ── HERO ─────────────────────────────────────────── */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        /* 
+          REEMPLAZA esta URL con tu propia imagen:
+          background-image: url('tu-imagen.jpg');
+        */
+        background-image: url("https://cdn-imgix.headout.com/media/images/5b5d4458f98a10139a5e98d0fe8f15b3-21526-barcelona-combo--montjuic-cable-car---aquarium-barcelona-07.jpg?auto=compress%2Cformat&q=90&crop=faces&fit=crop");
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.35) saturate(1.4);
+        transform: scale(1.04);
+        animation: slowZoom 20s ease-in-out infinite alternate;
+      }
+
+      @keyframes slowZoom {
+        from {
+          transform: scale(1.04);
+        }
+        to {
+          transform: scale(1.12);
+        }
+      }
+
+      /* Gradient overlay encima de la foto */
+      .hero-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(1, 36, 58, 0.2) 0%,
+          rgba(1, 36, 58, 0) 40%,
+          rgba(1, 36, 58, 0.8) 100%
+        );
+      }
+
+      /* Burbujas decorativas */
+      .bubbles {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .bubble {
+        position: absolute;
+        bottom: -60px;
+        border-radius: 50%;
+        background: rgba(0, 201, 212, 0.15);
+        border: 1px solid rgba(0, 201, 212, 0.3);
+        animation: rise linear infinite;
+      }
+      .bubble:nth-child(1) {
+        width: 14px;
+        height: 14px;
+        left: 10%;
+        animation-duration: 8s;
+        animation-delay: 0s;
+      }
+      .bubble:nth-child(2) {
+        width: 22px;
+        height: 22px;
+        left: 22%;
+        animation-duration: 11s;
+        animation-delay: 2s;
+      }
+      .bubble:nth-child(3) {
+        width: 8px;
+        height: 8px;
+        left: 35%;
+        animation-duration: 7s;
+        animation-delay: 4s;
+      }
+      .bubble:nth-child(4) {
+        width: 18px;
+        height: 18px;
+        left: 50%;
+        animation-duration: 13s;
+        animation-delay: 1s;
+      }
+      .bubble:nth-child(5) {
+        width: 10px;
+        height: 10px;
+        left: 65%;
+        animation-duration: 9s;
+        animation-delay: 3.5s;
+      }
+      .bubble:nth-child(6) {
+        width: 26px;
+        height: 26px;
+        left: 78%;
+        animation-duration: 15s;
+        animation-delay: 0.5s;
+      }
+      .bubble:nth-child(7) {
+        width: 12px;
+        height: 12px;
+        left: 88%;
+        animation-duration: 10s;
+        animation-delay: 6s;
+      }
+
+      @keyframes rise {
+        0% {
+          transform: translateY(0) translateX(0);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 0.6;
+        }
+        100% {
+          transform: translateY(-100vh) translateX(20px);
+          opacity: 0;
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 760px;
+      }
+
+      .hero-eyebrow {
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--aqua);
+        margin-bottom: 1.2rem;
+        opacity: 0;
+        animation: fadeUp 0.8s 0.2s ease forwards;
+      }
+
+      .hero-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.8rem, 7vw, 5.5rem);
+        font-weight: 900;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        color: var(--white);
+        text-shadow: 0 4px 40px rgba(0, 0, 0, 0.6);
+        margin-bottom: 1.4rem;
+        opacity: 0;
+        animation: fadeUp 0.8s 0.4s ease forwards;
+      }
+
+      .hero-title span {
+        color: var(--aqua);
+      }
+
+      .hero-subtitle {
+        font-size: clamp(0.95rem, 2vw, 1.15rem);
+        font-weight: 300;
+        line-height: 1.7;
+        color: var(--white-dim);
+        max-width: 580px;
+        margin: 0 auto 2.5rem;
+        opacity: 0;
+        animation: fadeUp 0.8s 0.6s ease forwards;
+      }
+
+      .hero-cta {
+        display: inline-block;
+        padding: 0.85rem 2.4rem;
+        background: transparent;
+        color: var(--aqua);
+        border: 1.5px solid var(--aqua);
+        border-radius: 2px;
+        font-family: "Lato", sans-serif;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition:
+          background 0.3s,
+          color 0.3s;
+        opacity: 0;
+        animation: fadeUp 0.8s 0.8s ease forwards;
+      }
+      .hero-cta:hover {
+        background: var(--aqua);
+        color: var(--ocean-deep);
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ── MAIN CONTENT ─────────────────────────────────── */
+      main {
+        position: relative;
+        background: linear-gradient(180deg, var(--ocean-deep) 0%, #011a2c 100%);
+        padding: 5rem 1.5rem 6rem;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .section-label {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--aqua);
+        margin-bottom: 1rem;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1.2;
+      }
+
+      .divider {
+        width: 48px;
+        height: 2px;
+        background: var(--aqua);
+        margin: 1.4rem auto 0;
+        opacity: 0.7;
+      }
+
+      /* ── GRID ─────────────────────────────────────────── */
+      .zones-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.6rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      /* ── CARD ─────────────────────────────────────────── */
+      .zone-card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 6px;
+        padding: 2rem 1.8rem 2rem;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease,
+          border-color 0.35s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .zone-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--aqua),
+          transparent
+        );
+        opacity: 0;
+        transition: opacity 0.35s;
+      }
+
+      .zone-card:hover {
+        transform: translateY(-6px);
+        box-shadow:
+          0 20px 60px rgba(0, 0, 0, 0.5),
+          0 0 30px var(--aqua-glow);
+        border-color: rgba(0, 201, 212, 0.5);
+      }
+      .zone-card:hover::before {
+        opacity: 1;
+      }
+
+      .card-icon {
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
+        display: block;
+        line-height: 1;
+      }
+
+      .card-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 0.6rem;
+        line-height: 1.25;
+      }
+
+      .card-desc {
+        font-size: 0.9rem;
+        font-weight: 300;
+        color: var(--white-muted);
+        line-height: 1.65;
+        margin-bottom: 1.4rem;
+      }
+
+      /* ── HIGHLIGHTS (lista interior) ─────────────────── */
+      .highlights {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      .highlights li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.65rem;
+        font-size: 0.85rem;
+        font-weight: 400;
+        color: var(--white-dim);
+        line-height: 1.5;
+      }
+
+      .highlights li::before {
+        content: "▸";
+        color: var(--aqua);
+        flex-shrink: 0;
+        margin-top: 0.05em;
+        font-size: 0.75rem;
+      }
+
+      /* ── STAT STRIP ───────────────────────────────────── */
+      .stats {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3rem;
+        max-width: 900px;
+        margin: 5rem auto 0;
+        padding-top: 4rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .stat {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 900;
+        color: var(--aqua);
+        display: block;
+        line-height: 1;
+        margin-bottom: 0.4rem;
+      }
+
+      .stat-label {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--white-muted);
+      }
+
+      /* ── FOOTER ───────────────────────────────────────── */
+      footer {
+        text-align: center;
+        padding: 2.5rem 1.5rem;
+        font-size: 0.78rem;
+        color: var(--white-muted);
+        letter-spacing: 0.05em;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        background: #010f1c;
+      }
+
+      footer a {
+        color: var(--aqua);
+        text-decoration: none;
+      }
+
+      /* ── RESPONSIVE ───────────────────────────────────── */
+      @media (max-width: 600px) {
+        .zones-grid {
+          grid-template-columns: 1fr;
+        }
+        .stats {
+          gap: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Barcelona · Puerto Olímpico</p>
+        <h1 class="hero-title">L'Aquàrium<br /><span>de Barcelona</span></h1>
+        <p class="hero-subtitle">
+          Sumérgete en el mundo marino más fascinante de Europa. Desde las
+          profundidades del Mediterráneo hasta los arrecifes tropicales, una
+          experiencia única te espera.
+        </p>
+        <a href="#zonas" class="hero-cta">Explorar las zonas</a>
+      </div>
+    </section>
+
+    <!-- MAIN -->
+    <main id="zonas">
+      <div class="section-header">
+        <span class="section-label">Descubre</span>
+        <h2 class="section-title">Las Zonas del Aquàrium</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="zones-grid">
+        <!-- Oceanario -->
+        <div class="zone-card">
+          <span class="card-icon">🦈</span>
+          <h3 class="card-title">El Oceanario</h3>
+          <p class="card-desc">
+            La zona más emblemática y espectacular del recinto. Un espectáculo
+            submarino sin igual en el corazón de Barcelona.
+          </p>
+          <ul class="highlights">
+            <li>
+              <strong>Túnel Subacuático</strong> — 80 metros de pasillo de
+              cristal atravesando el tanque principal.
+            </li>
+            <li>
+              <strong>Fauna</strong> — Tiburones toro, rayas, peces luna y
+              morenas te rodean.
+            </li>
+            <li>
+              <strong>Dimensiones</strong> — 36 m de diámetro y casi 4 millones
+              de litros de agua.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Mediterráneo -->
+        <div class="zone-card">
+          <span class="card-icon">🌊</span>
+          <h3 class="card-title">Acuarios Mediterráneos</h3>
+          <p class="card-desc">
+            El acuario más importante del mundo en temática mediterránea, con 14
+            acuarios dedicados a este mar único.
+          </p>
+          <ul class="highlights">
+            <li>
+              Recreaciones de la <strong>costa rocosa</strong> y comunidades de
+              coralígeno.
+            </li>
+            <li>
+              Áreas protegidas como el <strong>Delta del Ebro</strong> y las
+              <strong>Islas Medas</strong>.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tropicales -->
+        <div class="zone-card">
+          <span class="card-icon">🌴</span>
+          <h3 class="card-title">Mares Tropicales</h3>
+          <p class="card-desc">
+            Una explosión de color con 7 acuarios que transportan al visitante a
+            los rincones más exóticos del planeta.
+          </p>
+          <ul class="highlights">
+            <li>
+              <strong>Ecosistemas</strong> — Mar Rojo, Gran Barrera de Coral y
+              Mar Caribe.
+            </li>
+            <li>
+              <strong>Fauna</strong> — Peces payaso, arrecifes de coral y
+              especies venenosas.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Planeta Aqua -->
+        <div class="zone-card">
+          <span class="card-icon">🐧</span>
+          <h3 class="card-title">Planeta Aqua</h3>
+          <p class="card-desc">
+            Segunda planta. Explora cómo la vida se adapta a condiciones
+            extremas, desde el frío polar hasta el agua dulce.
+          </p>
+          <ul class="highlights">
+            <li>
+              <strong>La Vida en el Frío</strong> — Hábitat de los pingüinos de
+              Humboldt.
+            </li>
+            <li>
+              <strong>Mundo de Medusas</strong> — Exposición dentro de una
+              réplica de cachalote.
+            </li>
+            <li>
+              <strong>Agua y Vida</strong> — Pirañas, ajolotes y ranas
+              tropicales de agua dulce.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Explora -->
+        <div class="zone-card">
+          <span class="card-icon">🔭</span>
+          <h3 class="card-title">¡Explora! · Zona Infantil</h3>
+          <p class="card-desc">
+            El espacio interactivo diseñado específicamente para los más
+            pequeños, donde aprender es una aventura submarina.
+          </p>
+          <ul class="highlights">
+            <li>
+              Más de <strong>50 actividades</strong> para tocar, mirar y
+              escuchar.
+            </li>
+            <li>
+              Reproducciones de <strong>cuevas</strong>, un
+              <strong>batiscafo</strong> y juegos educativos.
+            </li>
+            <li>Aprendizaje lúdico sobre el <strong>mundo marino</strong>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- STATS -->
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-number">4M</span>
+          <span class="stat-label">Litros de agua</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">80m</span>
+          <span class="stat-label">Túnel subacuático</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">14</span>
+          <span class="stat-label">Acuarios mediterráneos</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Actividades infantiles</span>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        © 2025 L'Aquàrium de Barcelona &nbsp;·&nbsp;
+        <a href="https://www.aquariumbcn.com" target="_blank"
+          >aquariumbcn.com</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
