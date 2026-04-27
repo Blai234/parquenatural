@@ -36,3 +36,8 @@ body {
 .boton:hover { 
   background-color: chartreuse;
 }
+
+.footer {
+  text-align: center;
+  padding: 10px;
+}
