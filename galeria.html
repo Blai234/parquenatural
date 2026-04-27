@@ -1,14 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./estilos/estilos.css">
-  <title>Galeria</title>
-</head>
-<body>
-  <header><h1>Galería fotográfica</h1></header>
-  <div class="contenedor-principal">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./estilos/estilos.css" />
+    <title>Galeria</title>
+  </head>
+  <body>
+    <header>
+      <img
+        src="./imagenes/LAquarium-Barcelona-800x445.jpg"
+        alt="logo oficial aquarium bcn"
+        width="560"
+        class="banner"
+      />
+      <h1>GALERÍA FOTOGRÁFICA</h1>
+    </header>
+    <div class="contenedor-principal">
       <nav class="menu-lateral">
         <ul>
           <li><a href="index.html" class="boton">Inicio</a></li>
@@ -18,19 +26,33 @@
           <li><a href="visita.html" class="boton">Visita</a></li>
         </ul>
       </nav>
-  <main class="contenido-derecha">
-    <p>Estas son alguna de las fotos de los animales que verás en el recinto:</p>
-    <img src="./imagenes/bullshark1-1024x819.webp" alt="tiburon-toro" width="500px">
-    <p>Tiburón toro</p>
-    <img src="./imagenes/pulpo-comun-pulpo-a-la-gallega-pulperia-can-lampazas-barcelona.jpg" alt="pulpo-comun" width="500px">
-    <p>Pulpo común</p>
-    <img src="./imagenes/images.jpg" alt="raya-comun" width="500px">
-    <p>Raya común</p>
-    <img src="./imagenes/thumbnail-aclean.jpg" alt="caballito-de-mar" width="500px">
-    <p>Caballito de mar</p>
-  </main>
-</div>
+      <div class="galeria">
+        <p>
+          Estas son alguna de las fotos de los animales que verás en el recinto:
+        </p>
+        <img
+          src="./imagenes/bullshark1-1024x819.webp"
+          alt="tiburon-toro"
+          width="500px"
+        />
+        <p>Tiburón toro</p>
+        <img
+          src="./imagenes/pulpo-comun-pulpo-a-la-gallega-pulperia-can-lampazas-barcelona.jpg"
+          alt="pulpo-comun"
+          width="500px"
+        />
+        <p>Pulpo común</p>
+        <img src="./imagenes/images.jpg" alt="raya-comun" width="500px" />
+        <p>Raya común</p>
+        <img
+          src="./imagenes/thumbnail-aclean.jpg"
+          alt="caballito-de-mar"
+          width="500px"
+        />
+        <p>Caballito de mar</p>
+      </div>
+    </div>
 
-<footer class="footer">Proyecto web sobre el Aquàrium de Barcelona</footer>
-</body>
+    <footer class="footer">Proyecto web sobre el Aquàrium de Barcelona</footer>
+  </body>
 </html>

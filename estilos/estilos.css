@@ -12,6 +12,16 @@ body {
                'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.banner {
+  width: 100%;  
+  height: auto;     
+  display: block;   
+}
+
+.banner2 {
+  float: right;
+}
+
 .contenedor-principal {
   display: flex;
   align-items: flex-start;
@@ -51,6 +61,17 @@ th, td {
 
 th {
   background-color: lightblue;
+}
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.galeria img {
+  width: 35%;
+  height: auto;
 }
 
 .footer {
