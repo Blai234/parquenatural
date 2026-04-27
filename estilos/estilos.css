@@ -8,29 +8,31 @@ h2 {
 }
 
 body {
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+               'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .contenedor-principal {
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  padding: 20px
+  padding: 20px; 
 }
 
 .menu-lateral li {
   flex: 200px;
   margin-bottom: 25px;
-  align-items: center;
+  text-align: center; 
 }
 
 .boton {
   background-color: aqua;
   padding: 10px;
-  transition: 3.5s;
+  transition: 0.3s;
   text-align: center;
+  display: block; 
 }
 
-.boton :hover {
+.boton:hover { 
   background-color: chartreuse;
 }
