@@ -67,19 +67,29 @@ th {
 }
 
 .galeria {
-  flex-wrap: wrap;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.galeria img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+.intro {
+  grid-column: 1 / span 2; 
+  text-align: center;
 }
+
+.item img {
+  width: 100%;    
+  height: auto;
+  display: block;
+}
+
+.item p {
+  text-align: center; 
+  margin-top: 5px;
+}
+
 
 .footer {
   text-align: center;
