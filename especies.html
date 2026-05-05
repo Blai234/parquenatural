@@ -1,91 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./estilos/estilos.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Especies</title>
-  </head>
-  <body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Especies - L'Aquàrium</title>
+</head>
+<body>
     <div class="container-fluid">
-    <header>
-      <img
-        src="./imagenes/LAquarium-Barcelona-800x445.jpg"
-        alt="logo oficial aquarium bcn"
-        width="560"
-        class="banner"
-      />
-      <h1>ESPECIES</h1>
-    </header>
-    <div class="row">
-      <div class="col-sm-2">
-        <nav class="nav">
-        <ul>
-          <li><a href="index.html" class="boton">Inicio</a></li>
-          <li><a href="especies.html" class="boton">Especies</a></li>
-          <li><a href="exhibicion.html" class="boton">Exhibición</a></li>
-          <li><a href="galeria.html" class="boton">Galeria</a></li>
-          <li><a href="visita.html" class="boton">Visita</a></li>
-        </ul>
-        </nav>
-      </div>
+        <header class="py-3">
+            <img src="./imagenes/LAquarium-Barcelona-800x445.jpg" alt="logo oficial aquarium bcn" width="560" class="img-fluid banner" />
+            <h1 class="mt-2">ESPECIES</h1>
+        </header>
 
-      <div class="col-sm-5">
+        <div class="row">
+            <!-- Menú Lateral -->
+            <div class="col-sm-2">
+                <nav class="nav flex-column">
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="btn btn-outline-primary w-100 mb-2">Inicio</a></li>
+                        <li><a href="especies.html" class="btn btn-outline-primary w-100 mb-2">Especies</a></li>
+                        <li><a href="exhibicion.html" class="btn btn-outline-primary w-100 mb-2">Exhibición</a></li>
+                        <li><a href="galeria.html" class="btn btn-outline-primary w-100 mb-2">Galeria</a></li>
+                        <li><a href="visita.html" class="btn btn-outline-primary w-100 mb-2">Visita</a></li>
+                    </ul>
+                </nav>
+            </div>
 
-        <!--  Descripción de algunas especies -->
-        <div class="card" style="width: 400px;"><img class="card-img-top" src="./imagenes/bullshark1-1024x819.webp" alt="Tiburon">
-          <div class="card-body"><h2 class="card-title">Tiburón toro</h2></div>
-          <p class="card-text">El tiburón toro (Carcharias taurus) es uno de los grandes
-          protagonistas del Oceanarium. Con sus filas de dientes visibles
-          incluso con la boca cerrada, su aspecto imponente contrasta con su
-          comportamiento generalmente tranquilo en cautividad. Pueden alcanzar
-          los 3,2 metros de longitud y son excelentes nadadores de fondo.</p>
+            <!-- Contenido Principal -->
+            <div class="col-sm-10">
+                <p class="lead">Estas son algunas de las especies del acuario:</p>
+                
+                <div class="d-flex flex-wrap gap-4">
+                    
+                    <!-- Tiburón Toro -->
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="./imagenes/bullshark1-1024x819.webp" alt="Tiburon">
+                        <div class="card-body">
+                            <h2 class="card-title h5">Tiburón toro</h2>
+                            <p class="card-text small">El tiburón toro (Carcharias taurus) es uno de los grandes protagonistas del Oceanarium. Pueden alcanzar los 3,2 metros de longitud.</p>
+                        </div>
+                    </div>
 
-        <p>Estas son algunas de las especies del aquario:</p>
-        <h2>Tiburón toro</h2>
-        <p>
-          El tiburón toro (Carcharias taurus) es uno de los grandes
-          protagonistas del Oceanarium. Con sus filas de dientes visibles
-          incluso con la boca cerrada, su aspecto imponente contrasta con su
-          comportamiento generalmente tranquilo en cautividad. Pueden alcanzar
-          los 3,2 metros de longitud y son excelentes nadadores de fondo.
-        </p>
-        <h2>Raya común</h2>
-        <p>
-          La raya común (Raja clavata) es uno de los elasmobranquios más
-          representativos del Mediterráneo. Su cuerpo aplanado le permite
-          camuflarse sobre el fondo arenoso. En la zona de contacto del acuario,
-          los visitantes pueden tocar suavemente a estos animales bajo la
-          supervisión del personal especializado.
-        </p>
-        </div>
+                    <!-- Raya Común -->
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="./imagenes/images.jpg" alt="Raya">
+                        <div class="card-body">
+                            <h2 class="card-title h5">Raya común</h2>
+                            <p class="card-text small">La raya común (Raja clavata) es representativa del Mediterráneo. Su cuerpo aplanado le permite camuflarse sobre el fondo arenoso.</p>
+                        </div>
+                    </div>
 
-      <div class="col-sm-5">
+                    <!-- Pulpo Común -->
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="./imagenes/pulpo-comun-pulpo-a-la-gallega-pulperia-can-lampazas-barcelona.jpg" alt="Pulpo">
+                        <div class="card-body">
+                            <h2 class="card-title h5">Pulpo Común</h2>
+                            <p class="card-text small">El pulpo común (Octopus vulgaris) es uno de los invertebrados más inteligentes del planeta, capaz de cambiar de color y textura.</p>
+                        </div>
+                    </div>
 
-        <h2>Pulpo común</h2>
-        <p>
-          El pulpo común (Octopus vulgaris) es considerado uno de los
-          invertebrados más inteligentes del planeta. Capaz de cambiar de color
-          y textura en milisegundos, es un maestro del camuflaje. En el acuario
-          pueden observarse sus habilidades de resolución de problemas en
-          actividades de enriquecimiento ambiental diseñadas por los cuidadores.
-        </p>
-        <h2>Caballito de mar</h2>
-        <p>
-          El caballito de mar (Hippocampus guttulatus) es una de las especies
-          más carismáticas y delicadas del Mediterráneo. El acuario participa en
-          un programa de cría en cautividad de esta especie, cuyas poblaciones
-          han disminuido debido a la pesca accidental y la degradación de las
-          praderas de posidonia.
-        </p>
-      </div>
+                    <!-- Caballito de Mar -->
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="./imagenes/thumbnail-aclean.jpg" alt="caballito mar">
+                        <div class="card-body">
+                            <h2 class="card-title h5">Caballito de Mar</h2>
+                            <p class="card-text small">El caballito de mar (Hippocampus guttulatus) es una especie carismática. El acuario participa en un programa de cría en cautividad.</p>
+                        </div>
+                    </div>
+
+                </div> 
+            </div> 
+        </div> 
+
+        <footer class="footer mt-5 py-3 border-top">
+            <p class="text-center">&copy; L'Aquàrium Barcelona 2026</p>
+        </footer>
     </div>
-
-    <footer class="footer">
-      <p>&copy; L'Aquàrium Barcelona 2026</p>
-    </footer>
-    </div>
-  </body>
+</body>
 </html>

@@ -1,86 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./estilos/estilos.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Index</title>
-  </head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Inicio - L'Aquàrium Barcelona</title>
+</head>
 
-  <body>
+<body>
     <div class="container-fluid">
-    <header>
-      <img
-        src="./imagenes/LAquarium-Barcelona-800x445.jpg"
-        alt="logo oficial aquarium bcn"
-        width="560"
-        class="banner"
-      />
-      <h1>AQUARIO BARCELONA</h1>
-    </header>
+        <header class="py-3">
+            <img src="./imagenes/LAquarium-Barcelona-800x445.jpg" alt="logo oficial aquarium bcn" width="560" class="img-fluid banner" />
+            <h1 class="mt-2">AQUARIO BARCELONA</h1>
+        </header>
 
-    <!--  Botones con enlaces a las otras páginas -->
+        <div class="row">
+            <!-- Menú Lateral -->
+            <div class="col-sm-2">
+                <nav class="nav flex-column">
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="btn btn-outline-primary w-100 mb-2">Inicio</a></li>
+                        <li><a href="especies.html" class="btn btn-outline-primary w-100 mb-2">Especies</a></li>
+                        <li><a href="exhibicion.html" class="btn btn-outline-primary w-100 mb-2">Exhibición</a></li>
+                        <li><a href="galeria.html" class="btn btn-outline-primary w-100 mb-2">Galeria</a></li>
+                        <li><a href="visita.html" class="btn btn-outline-primary w-100 mb-2">Visita</a></li>
+                    </ul>
+                </nav>
+            </div>
 
-    <div class="row">
-      <div class="col-sm-2">
-        <nav class="nav">
-        <ul>
-          <li><a href="index.html" class="boton">Inicio</a></li>
-          <li><a href="especies.html" class="boton">Especies</a></li>
-          <li><a href="exhibicion.html" class="boton">Exhibición</a></li>
-          <li><a href="galeria.html" class="boton">Galeria</a></li>
-          <li><a href="visita.html" class="boton">Visita</a></li>
-        </ul>
-        </nav>
-      </div>
-      <!--  Descripción del aquario -->
-      <div class="col-sm-10">
-        <h2>Bienvenidos al Aquario</h2>
-        <p>
-          El Aquàrium de Barcelona, al Port Vell, está considerado uno de los
-          mayores acuarios de Europa y el más importante en temática
-          mediterránea. Este centro marino lúdico y educativo acerca a los
-          visitantes a la vida de las profundidades marinas gracias a sus 5
-          millones de litros de agua, donde viven 11.000 animales marinos de 450
-          especies diferentes.
-        </p>
-        <p>
-          La visita al Aquàrium de Barcelona nos descubre todos los secretos del
-          mar. El plato fuerte es el inmenso oceanario, donde habitan especies
-          como los tiburones, los peces luna o las rayas. Podremos adentrarnos a
-          través de un túnel subacuático de 80 metros, con la viva sensación de
-          estar caminando por el fondo del mar. La exposición "Planeta Aqua",
-          por otro lado, permite descubrir las criaturas que se han adaptado a
-          las más diversas condiciones del medio acuático: el frío glacial, la
-          oscuridad de los abismos, las cálidas aguas tropicales? La exposición
-          refleja la importancia de la vida acuática en la historia de nuestro
-          planeta. Podremos encontrar desde caimanes a pirañas y desde fósiles
-          vivientes a pingüinos. También encontramos dos recreaciones de zonas
-          protegidas de nuestras costas, el Delta del Ebro y las islas Medes.
-        </p>
-        <p>
-          Pensado para niñas y niños, "Explora!" contiene más de 50 actividades
-          interactivas para tocar, mirar, escuchar, investigar y descubrir el
-          mundo marino. La visita al Aquàrium de Barcelona se completa con los
-          grandes acuarios mediterráneos y tropicales, y con "Miniaquària", un
-          espacio pensado para descubrir detalles curiosos de la flora y fauna
-          marinas.
-        </p>
-        <p>
-          El Aquàrium de Barcelona, en el Port Vell, también ofrece el programa
-          "Immersió amb taurons" (Inmersión con tiburones)para submarinistas y
-          "Dormir amb taurons", con el que los niños y niñas de 8 a 12 años
-          pueden pasar la noche en el Aquàrium siguiendo un programa educativo
-          de actividades.
-        </p>
-      </div>
+            <!-- Contenido Principal -->
+            <div class="col-sm-10">
+                <h2>Bienvenidos al Aquario</h2>
+                <p>
+                    El Aquàrium de Barcelona, al Port Vell, está considerado uno de los
+                    mayores acuarios de Europa y el más importante en temática
+                    mediterránea. Este centro marino lúdico y educativo acerca a los
+                    visitantes a la vida de las profundidades marinas gracias a sus 5
+                    millones de litros de agua, donde viven 11.000 animales marinos de 450
+                    especies diferentes.
+                </p>
+                <p>
+                    La visita al Aquàrium de Barcelona nos descubre todos los secretos del
+                    mar. El plato fuerte es el inmenso oceanario, donde habitan especies
+                    como los tiburones, los peces luna o las rayas. Podremos adentrarnos a
+                    través de un túnel subacuático de 80 metros, con la viva sensación de
+                    estar caminando por el fondo del mar. 
+                </p>
+                <p>
+                    La exposición "Planeta Aqua", por otro lado, permite descubrir las criaturas que se han adaptado a
+                    las más diversas condiciones del medio acuático: el frío glacial, la
+                    oscuridad de los abismos, las cálidas aguas tropicales. La exposición
+                    refleja la importancia de la vida acuática en la historia de nuestro
+                    planeta. Podremos encontrar desde caimanes a pirañas y desde fósiles
+                    vivientes a pingüinos. También encontramos dos recreaciones de zonas
+                    protegidas de nuestras costas, el Delta del Ebro y las islas Medes.
+                </p>
+                <p>
+                    Pensado para niñas y niños, "Explora!" contiene más de 50 actividades
+                    interactivas para tocar, mirar, escuchar, investigar y descubrir el
+                    mundo marino. La visita al Aquàrium de Barcelona se completa con los
+                    grandes acuarios mediterráneos y tropicales, y con "Miniaquària", un
+                    espacio pensado para descubrir detalles curiosos de la flora y fauna
+                    marinas.
+                </p>
+                <p>
+                    El Aquàrium de Barcelona también ofrece el programa
+                    "Immersió amb taurons" (Inmersión con tiburones) para submarinistas y
+                    "Dormir amb taurons", con el que los niños y niñas de 8 a 12 años
+                    pueden pasar la noche en el Aquàrium siguiendo un programa educativo
+                    de actividades.
+                </p>
+            </div>
+        </div>
+
+        <footer class="footer mt-5 py-3 border-top">
+            <p class="text-center">&copy; L'Aquàrium Barcelona 2026</p>
+        </footer>
     </div>
-
-    <footer class="footer">
-      <p>&copy; L'Aquàrium Barcelona 2026</p>
-    </footer>
-    </div>
-  </body>
+</body>
 </html>
